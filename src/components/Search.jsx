@@ -21,7 +21,6 @@ const Search = (props) => {
           onChange={(e) => fetchResults(e.target.value)}
           className="form-control"
           id="breed-search"
-          // value={props.searchText}
           placeholder="Search for breeds"
         />
       </div>

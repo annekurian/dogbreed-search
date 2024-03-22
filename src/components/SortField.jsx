@@ -12,11 +12,7 @@ function SortField(props) {
           <span className="input-group-text">
             <i className="bi bi-sort-down"></i>
           </span>
-          <select
-            // value={props.sortField}
-            onChange={handleChange}
-            className="form-control form-select"
-          >
+          <select onChange={handleChange} className="form-control form-select">
             <option value="name">Name</option>
             <option value="height">Height</option>
             <option value="life-span">Life span</option>
