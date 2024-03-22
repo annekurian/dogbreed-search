@@ -1,0 +1,43 @@
+.image-component{
+    width: 300px;
+    height: 200px;
+    transition: all 0.5s ease-in-out;
+}
+ 
+.breed-container .card{
+    width: 100%;
+    height:0%;
+    transition: all 0.5s ease-in-out;
+}
+
+.breed-container .card:hover{
+    width: 400px;
+    height:400px;
+    z-index: 99;
+}
+
+.breed-container .card .card-body{
+    background-color: rgba(248, 249, 250, 1);
+    transition: all 0.5s ease;
+}
+
+.breed-container .card:hover .card-body{
+    background: rgba(226, 94, 62, 0.5);
+}
+
+.breed-container .card:hover .image-component{
+    width: 400px;
+}
+
+.breed-info{
+    list-style: none;
+    padding-left: 0;
+}
+
+.breed-info-label{
+    font-size: 0.95rem;
+}
+
+.text-orange{
+    color:#E25E3E;
+}

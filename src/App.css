@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.banner{
+  height: 400px;
+}
+
+.banner-heading{
+  width: 300px;
+}
