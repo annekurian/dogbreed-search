@@ -38,9 +38,10 @@
 }
 
 .banner{
-  height: 400px;
+  height: 30vh;
 }
 
 .banner-heading{
-  width: 300px;
+  width: 30vw;
+  height: 20vh;
 }

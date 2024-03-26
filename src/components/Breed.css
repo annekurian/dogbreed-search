@@ -1,28 +1,43 @@
 .image-component{
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: 190px;
     transition: all 0.5s ease-in-out;
 }
  
 .breed-container .card{
-    width: 100%;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     transition: all 0.5s ease-in-out;
 }
 
 .breed-container .card:hover{
     width: 400px;
-    height:400px;
+    height:390px;
     z-index: 99;
 }
 
 .breed-container .card .card-body{
     background-color: rgba(248, 249, 250, 1);
-    transition: all 0.5s ease;
+    max-height:120px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.breed-container .card::after{
+    content: "";
+    display: block;
+    width: 0;
+    background: #E25E3E;
+    transition: width 1s ease;
 }
 
 .breed-container .card:hover .card-body{
-    background: rgba(226, 94, 62, 0.5);
+    max-height: 200px;
+}
+
+.breed-container .card:hover::after{
+    height:2px;
+    width: 100%;
 }
 
 .breed-container .card:hover .image-component{
@@ -35,9 +50,13 @@
 }
 
 .breed-info-label{
-    font-size: 0.95rem;
+    font-size: 0.90rem;
 }
 
 .text-orange{
     color:#E25E3E;
+}
+
+.table tbody tr td{
+padding: 0.2rem 0.2rem;
 }

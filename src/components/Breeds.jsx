@@ -4,7 +4,6 @@ import "./Breeds.css";
 
 const Breeds = (props) => {
   const { searchText, breeds, sortField } = props;
-  // console.log("Breeds :" + breeds + "|" + searchText);
 
   const sortBy = (property) => {
     return function (a, b) {
@@ -48,15 +47,19 @@ const Breeds = (props) => {
     };
   };
 
+  const slicedTemperament = (temperament) => {
+    if (!temperament) return;
+    let tempArray = temperament.split(",");
+    return [tempArray[0], tempArray[1], tempArray[2]].join(",");
+  };
+
   const breedRows = () => {
     const rows = [];
-    // console.log("Search text in Breeds:" + JSON.stringify(searchText));
     if (searchText) {
       const searchedBreed = Array.from(breeds).filter(
         (b) => b.name.toUpperCase().indexOf(searchText.toUpperCase()) > -1
       );
       if (!searchedBreed) return <span>No details found</span>;
-      // console.log("Search Breed", searchedBreed[0]);
       searchedBreed.map((breed) =>
         rows.push(
           <Breed
@@ -65,11 +68,12 @@ const Breeds = (props) => {
             lifeSpan={breed.life_span}
             imageUrl={breed.image.url}
             height={breed.height.metric}
+            weight={breed.weight.metric}
+            temp={slicedTemperament(breed.temperament)}
           />
         )
       );
     } else {
-      console.log("Display All:" + sortField);
       if (sortField) breeds.sort(sortBy(sortField));
       Array.from(breeds).map((breed) =>
         rows.push(
@@ -79,7 +83,8 @@ const Breeds = (props) => {
             lifeSpan={breed.life_span}
             imageUrl={breed.image.url}
             height={breed.height.metric}
-            temp={breed.temperament}
+            weight={breed.weight.metric}
+            temp={slicedTemperament(breed.temperament)}
           />
         )
       );

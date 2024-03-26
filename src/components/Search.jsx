@@ -4,7 +4,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 const Search = (props) => {
   const handleChange = async (value) => {
-    console.log("Props:" + JSON.stringify(props) + "|" + value);
     props.onSearchTextChange(value);
   };
 
